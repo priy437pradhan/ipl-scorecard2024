@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+    <style>
+     *{
+    margin: 0;
+    padding: 0;
+}
+.score-box{
+    width: 100%;
+    height: auto;
+    border: 1px solid #333;
+    border-radius: 10px;
+    margin: 20px 0;
+   
+}
+.score-box-heading{
+    width: 100%;
+    height: 52px;
+    background-color:  #990040;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+img.scorebox-heading-logo{
+    width: 32px;
+    height:32px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.score-box-heading h3 {
+    color: #fff;
+    text-transform: capitalize;
+    line-height: 32px;
+    font-size: 20px;
+    font-weight: normal;
+    margin: 0;
+}
+/* individual-day-matches-div */
+.individual-day-matches-div{
+    height: 100px;
+    background-color: #16171B;
+}
+
+/* individual-day-matches-div */
+
+/* tab-section-switcher */
+.tab-section-switcher{
+    background-color:#000;
+    border-radius: 0 0 10px 10px;
+    
+}
+.tab-list-ipl {
+    display: flex;
+    background-color:#223577;
+
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+p.team-name{
+  position: relative;
+    margin: 0 0 0 5px;
+    font-size: 14px;
+    height: 35px;
+    line-height: 35px;
+    /* border-bottom: 1px solid #a99f9f9d; */
+}
+p.team-name::after{
+  position: absolute;
+  content: "";
+  top: 35px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #a99f9f9d;
+}
+.tab-list-ipl li {
+    flex: 1;
+    padding: 0 3%;
+    display: inline;
+    border-radius: 0 0 10px 10px;
+}
+
+.tab-list-ipl li a {
+    display: inline-block;
+    padding: 4px 20px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.tab-content-ipl {
+    padding: 2px 0;
+}
+
+.tab-content-ipl:first-child {
+    display: block;
+}
+
+/* tab-section-switcher */
+/* team-container */
+.team-container{
+  display: flex;
+    padding: 0 26px;
+    max-height: 248px;
+    overflow: hidden
+}
+.team-logo-title{
+    color: #dedada;
+    text-transform: capitalize;
+    margin: 0;
+     box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+    border-right: 1px solid #333; 
+
+}
+/* team-container */
+.team-heading {
+  display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    overflow-y: hidden;
+}
+.team-items {
+    list-style-type: none;
+    display: flex;
+    align-items: center; 
+}
+
+ul.team-items {
+  position: relative;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 35px;
+    justify-content: end;
+    list-style-type: none;
+
+}
+ul.team-items::after{
+  position: absolute;
+  content: "";
+  top: 35px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #a99f9f9d;
+}
+ul.team-items li {
+    padding: 0;
+    display: flex;
+    color: #dedada;
+    justify-content: center;
+    
+}
+ul.team-items li p {
+  margin: 0;
+  font-size: 14px;
+    color: #dedada;
+    width: max-content;
+    line-height: 35px;
+    
+}
+ul.team-items li{
+    margin: 0 20px 0 0;
+
+}
+li.mwl{
+    width: 20px;
+}
+li.pts{
+    width: 20px;
+    font-weight: 500;
+    color:#fff;
+}
+li.nrr{
+    width: 60px;
+}
+.five-m{
+    width: 110px;
+
+}
+
+ul.team-logo-nm {
+  position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    height: 35px;
+    padding: 0 11px;
+    list-style-type: none;
+    text-transform: uppercase;
+    /* border-bottom: 1px solid #a99f9f9d; */
+
+}
+
+ul.team-logo-nm::after{
+  position: absolute;
+  content: "";
+  top: 35px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #a99f9f9d;
+
+}
+
+
+ul.team-logo-nm li{
+    margin-right: 15px;
+    color: #dedada;
+}
+img.team-icon-ipl{
+    width: 32px;
+    border-radius: 50%;
+    height: 31.3px;
+}
+ul.loss-win{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+ul.loss-win li {
+    height: 17px;
+    width: 17px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: #d2d2d2;
+}
+
+ul.loss-win li:not(:last-child) {
+    margin: 0 4px 0 0;
+}
+.see-all{
+    height: 52px;
+    background-color: #000;
+    text-align: center;
+    padding: 8px 0 0 0;
+    position: relative;
+}
+.see-all a {
+    text-decoration: none;
+    color: #e3e2e2;
+    font-size: 16px;
+    line-height: 52px;
+    text-transform: capitalize;
+   
+}
+.down-open{
+  
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #223577;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    
+}
+.down-open img{
+   margin-top: 12px;
+    height: 8px;
+}
+
+.extra-p{
+  padding-bottom: 40px;
+}
+@media only screen and (max-width: 767px) {
+  .team-container{
+    padding: 0 4px;
+  }
+  img.scorebox-heading-logo{
+    margin-right: 9px;
+  }
+  ul.team-items{
+    justify-content: flex-start;
+  }
+  .score-box-heading h3 {
+    color: #fff;
+    text-transform: capitalize;
+    line-height: 24px;
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0;
+}
+ul.team-items li {
+    margin:0;
+}
+
+    .team-logo-title {
+        position: sticky;
+        top: 0;
+        z-index: 1; 
+    }
+    .team-name{
+      padding-right: 50px;
+    }
+    .team-logo-nm{
+      padding-right: 50px;
+
+    }
+    .team-heading {
+      width:200px;
+      overflow-x: auto;
+    }
+    .mwl{
+      min-width: 35px;
+    }
+    .pts{
+      min-width: 35px;
+    }
+    .nrr{
+      min-width: 60px;
+    }
+    .five-m{
+      min-width: 140px;
+    }
+    
+    ul.loss-win li:not(:last-child) {
+    margin: 0 2px 0 0;
+    
+    }
+    ul.team-items{
+      width: auto;
+    }
+    .see-all{
+    height: 24px;
+    
+} 
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-9">
+            <div class="score-box">
+              <div class="score-box-heading">
+                <img
+                  src="images/logo-ipl.png"
+                  alt=""
+                  class="scorebox-heading-logo"
+                />
+                <h3>Indian premier league standings</h3>
+              </div>
+  
+              <!-- tab-section-switcher -->
+              <div class="tab-section-switcher">
+                <ul class="tab-list-ipl">
+                  <li><a href="#tab1" class="tab-link">table</a></li>
+                </ul>
+  
+                <div id="tab1" class="tab-content-ipl">
+                  <!-- team-container -->
+                  <div class="team-container">
+                    <div class="team-logo-title">
+                      <p class="team-name">team</p>
+                      <ul class="team-logo-nm">
+                        <li>1</li>
+  
+                        <li>
+                          <img src="images/rr.png" alt="" class="team-icon-ipl" />
+                        </li>
+                        <li>rr</li>
+                      </ul>
+                      <ul class="team-logo-nm">
+                        <li>1</li>
+  
+                        <li>
+                          <img src="images/rr.png" alt="" class="team-icon-ipl" />
+                        </li>
+                        <li>rr</li>
+                      </ul>
+                      
+                      
+                      <ul class="team-logo-nm">
+                        <li>1</li>
+  
+                        <li>
+                          <img src="images/rr.png" alt="" class="team-icon-ipl" />
+                        </li>
+                        <li>rr</li>
+                      </ul>
+                      <ul class="team-logo-nm">
+                        <li>1</li>
+  
+                        <li>
+                          <img src="images/rr.png" alt="" class="team-icon-ipl" />
+                        </li>
+                        <li>rr</li>
+                      </ul>
+                      <ul class="team-logo-nm">
+                        <li>1</li>
+  
+                        <li>
+                          <img src="images/rr.png" alt="" class="team-icon-ipl" />
+                        </li>
+                        <li>rr</li>
+                      </ul>
+                      <ul class="team-logo-nm">
+                        <li>1</li>
+  
+                        <li>
+                          <img src="images/rr.png" alt="" class="team-icon-ipl" />
+                        </li>
+                        <li>rr</li>
+                      </ul>
+                      <ul class="team-logo-nm">
+                        <li>1</li>
+  
+                        <li>
+                          <img src="images/rr.png" alt="" class="team-icon-ipl" />
+                        </li>
+                        <li>rr</li>
+                      </ul>
+                      <ul class="team-logo-nm">
+                        <li>1</li>
+  
+                        <li>
+                          <img src="images/rr.png" alt="" class="team-icon-ipl" />
+                        </li>
+                        <li>rr</li>
+                      </ul>
+                      <ul class="team-logo-nm">
+                        <li>1</li>
+  
+                        <li>
+                          <img src="images/rr.png" alt="" class="team-icon-ipl" />
+                        </li>
+                        <li>rr</li>
+                      </ul>
+                      <ul class="team-logo-nm">
+                        <li>1</li>
+  
+                        <li>
+                          <img src="images/rr.png" alt="" class="team-icon-ipl" />
+                        </li>
+                        <li>rr</li>
+                      </ul>
+                      <ul class="team-logo-nm">
+                        <li>1</li>
+  
+                        <li>
+                          <img src="images/rr.png" alt="" class="team-icon-ipl" />
+                        </li>
+                        <li>rr</li>
+                      </ul>
+                      
+                      <ul class="team-logo-nm">
+                        <li>1</li>
+  
+                        <li>
+                          <img src="images/rr.png" alt="" class="team-icon-ipl" />
+                        </li>
+                        <li>rr</li>
+                      </ul>
+                      
+                     
+                      
+                      
+                    </div>
+                    <div class="team-heading">
+                      
+                        <ul class="team-items">
+                        <li class="mwl"><p>W </p></li>
+                        <li class="mwl"><p>M</p></li>
+                        <li class="mwl"><p>L </p></li>
+                        
+                        <li class="nrr"><p>NRR</p></li> 
+                        <li class="pts"> <p>Pts</p></li>
+                        <li class="five-m"> <p>Last 5</p></li>
+                       
+                      </ul> 
+                      <ul class="team-items">
+                        <li class="mwl">1</li>
+                        <li class="mwl">2</li>
+                        <li class="mwl">2</li>
+                        <li class="nrr">+0.777</li>
+                        <li class="pts">1</li>
+                        <li class="five-m" >
+                          <ul class="loss-win">
+                            <li><img src="images/cross-loss.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li></li>
+                          </ul>
+                        </li>  
+                        
+                      </ul>
+                      <ul class="team-items">
+                        <li class="mwl">1</li>
+                        <li class="mwl">2</li>
+                        <li class="mwl">2</li>
+                        <li class="nrr">+0.777</li>
+                        <li class="pts">2</li>
+                        <li class="five-m" >
+                          <ul class="loss-win">
+                            <li><img src="images/cross-loss.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li></li>
+                          </ul>
+                        </li>  
+                        
+                      </ul>
+                      <ul class="team-items">
+                        <li class="mwl">1</li>
+                        <li class="mwl">2</li>
+                        <li class="mwl">2</li>
+                        <li class="nrr">+0.777</li>
+                        <li class="pts">3</li>
+                        <li class="five-m" >
+                          <ul class="loss-win">
+                            <li><img src="images/cross-loss.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li></li>
+                          </ul>
+                        </li>  
+                        
+                      </ul>
+                      <ul class="team-items">
+                        <li class="mwl">1</li>
+                        <li class="mwl">2</li>
+                        <li class="mwl">2</li>
+                        <li class="nrr">+0.777</li>
+                        <li class="pts">3</li>
+                        <li class="five-m" >
+                          <ul class="loss-win">
+                            <li><img src="images/cross-loss.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li></li>
+                          </ul>
+                        </li>  
+                        
+                      </ul>
+                      <ul class="team-items">
+                        <li class="mwl">1</li>
+                        <li class="mwl">2</li>
+                        <li class="mwl">2</li>
+                        <li class="nrr">+0.777</li>
+                        <li class="pts">3</li>
+                        <li class="five-m" >
+                          <ul class="loss-win">
+                            <li><img src="images/cross-loss.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li></li>
+                          </ul>
+                        </li>  
+                        
+                      </ul>
+                      <ul class="team-items">
+                        <li class="mwl">1</li>
+                        <li class="mwl">2</li>
+                        <li class="mwl">2</li>
+                        <li class="nrr">+0.777</li>
+                        <li class="pts">3</li>
+                        <li class="five-m" >
+                          <ul class="loss-win">
+                            <li><img src="images/cross-loss.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li></li>
+                          </ul>
+                        </li>  
+                        
+                      </ul>
+                      <ul class="team-items">
+                        <li class="mwl">1</li>
+                        <li class="mwl">2</li>
+                        <li class="mwl">2</li>
+                        <li class="nrr">+0.777</li>
+                        <li class="pts">3</li>
+                        <li class="five-m" >
+                          <ul class="loss-win">
+                            <li><img src="images/cross-loss.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li></li>
+                          </ul>
+                        </li>  
+                        
+                      </ul>
+                      <ul class="team-items">
+                        <li class="mwl">1</li>
+                        <li class="mwl">2</li>
+                        <li class="mwl">2</li>
+                        <li class="nrr">+0.777</li>
+                        <li class="pts">3</li>
+                        <li class="five-m" >
+                          <ul class="loss-win">
+                            <li><img src="images/cross-loss.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li></li>
+                          </ul>
+                        </li>  
+                        
+                      </ul>
+                      <ul class="team-items">
+                        <li class="mwl">1</li>
+                        <li class="mwl">2</li>
+                        <li class="mwl">2</li>
+                        <li class="nrr">+0.777</li>
+                        <li class="pts">3</li>
+                        <li class="five-m" >
+                          <ul class="loss-win">
+                            <li><img src="images/cross-loss.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li></li>
+                          </ul>
+                        </li>  
+                        
+                      </ul>
+                      <ul class="team-items">
+                        <li class="mwl">1</li>
+                        <li class="mwl">2</li>
+                        <li class="mwl">2</li>
+                        <li class="nrr">+0.777</li>
+                        <li class="pts">3</li>
+                        <li class="five-m" >
+                          <ul class="loss-win">
+                            <li><img src="images/cross-loss.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li></li>
+                          </ul>
+                        </li>  
+                        
+                      </ul>
+                        <ul class="team-items">
+                          <li class="mwl">1</li>
+                          <li class="mwl">2</li>
+                          <li class="mwl">2</li>
+                          <li class="nrr">+0.777</li>
+                          <li class="pts">3</li>
+                          <li class="five-m" >
+                            <ul class="loss-win">
+                              <li><img src="images/cross-loss.svg" alt="" /></li>
+                              <li><img src="images/right-win.svg" alt="" /></li>
+                              <li><img src="images/right-win.svg" alt="" /></li>
+                              <li><img src="images/right-win.svg" alt="" /></li>
+                              <li></li>
+                            </ul>
+                          </li>  
+                          
+                        </ul>
+                      <ul class="team-items">
+                        <li class="mwl">1</li>
+                        <li class="mwl">2</li>
+                        <li class="mwl">2</li>
+                        <li class="nrr">+0.777</li>
+                        <li class="pts">4</li>
+                        <li class="five-m" >
+                          <ul class="loss-win">
+                            <li><img src="images/cross-loss.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li><img src="images/right-win.svg" alt="" /></li>
+                            <li></li>
+                          </ul>
+                        </li>  
+                        
+                      </ul>
+                         
+                     
+                      
+                    </div>
+      
+                </div>
+                  
+                  <div class="see-all">
+                      <a href="#">
+                      <div class="down-open">
+                          
+                          <img src="images/down-open.svg" alt="">
+                      </div>
+                      </a>
+                     
+                  </div>
+                  <!-- team-container -->
+                </div>
+              </div>
+              <!-- tab-section-switcher -->
+            </div>
+          </div>
+          <div class="col-lg-3"></div>
+        </div>
+      </div>
+</body>
+<script>
+ document.querySelector('.down-open').addEventListener('click', function() {
+
+    var teamContainer = document.querySelector('.team-container');
+    var seeAll = document.querySelector('.see-all');
+    var extraP = document.querySelector('.extra-p');
+    teamContainer.style.maxHeight = 'none';
+       seeAll.style.display = 'none'; 
+       teamContainer.style.paddingBottom = '10px';
+    
+    
+}); 
+
+   
+</script>
+</html>
